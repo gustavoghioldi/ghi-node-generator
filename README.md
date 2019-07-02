@@ -6,14 +6,16 @@
 First, install [Yeoman](http://yeoman.io) and generator-ghi-node-generator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
+git clone https://github.com/gustavoghioldi/ghi-node-generator.git
+cd ghi-node-generator
+npm link
 npm install -g yo
-npm install -g generator-ghi-node-generator
 ```
 
 Then generate your new project:
 
 ```bash
-yo ghi-node-generator
+yo #select ❯ Ghi Node Generator 
 ```
 
 ## Getting To Know Yeoman
