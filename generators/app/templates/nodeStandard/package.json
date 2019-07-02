@@ -1,0 +1,77 @@
+{
+  "name": "<%= projectName %>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "local-default-w": "NODE_ENV=local  NODE_ENV_CONTEXT=default ./node_modules/nodemon/bin/nodemon.js ./bin/www",
+    "local-default": "NODE_ENV=local NODE_ENV_CONTEXT=default node ./bin/www",
+    "eslint": "node_modules/.bin/eslint  ./bin/www ./context/*.js  app.js   ./app/*.js ./app/**/*.js ./app/**/**/*.js --quiet",
+    "eslint-w": "node_modules/.bin/esw app.js   ./bin/www ./context/*.js  app.js   ./app/*.js ./app/**/*.js ./app/**/**/*.js  -w --quiet",
+    "eslint-fix": "node_modules/.bin/eslint   ./bin/www ./context/*.js  app.js   ./app/*.js ./app/**/*.js ./app/**/**/*.js  --fix",
+    "unit-test": "./node_modules/mocha/bin/mocha ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000",
+    "unit-test-w": "./node_modules/mocha/bin/mocha  ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000 -w",
+    "coverage": "nyc --reporter=text-summary  ./node_modules/mocha/bin/mocha ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000  ",
+    "coverage-html": "nyc --reporter=html  ./node_modules/mocha/bin/mocha ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000  ",
+    "coverage-table": "nyc  ./node_modules/mocha/bin/mocha   ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000  ",
+    "coverage-check": "nyc  check-coverage --lines 80 --functions 80 --branches 80 --statements 80 ./node_modules/mocha/bin/mocha ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000 ",
+    "lcov": "nyc --reporter=lcov --reporter=text-lcov ./node_modules/mocha/bin/mocha ./app/**/*.spec.js ./app/**/**/*.spec.js ./app/**/**/**/*.spec.js -t 10000 && cp coverage/lcov.info . && rm -rf coverage"
+  },
+  "nyc": {
+    "include": [
+      "./app/*.js",
+      "./app/**/*.js",
+      "./app/**/**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js",
+      "**/**/*.spec.js",
+      "**/**/**/*.spec.js"
+    ],
+    "all": true
+  },
+  "author": "Andres Kaiser",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-routemap": "^1.1.0",
+    "ioredis": "^4.10.0",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "artillery": "^1.6.0-13",
+    "chai": "^4.1.2",
+    "chakram": "^1.5.0",
+    "depcheck": "0.6.7",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-watch": "^3.1.4",
+    "husky": "^0.14.3",
+    "istanbul": "^1.1.0-alpha.1",
+    "lint-staged": "^7.2.0",
+    "mocha": "^3.5.0",
+    "mochawesome": "^2.3.0",
+    "mockery": "2.0.0",
+    "nodemon": "1.11.0",
+    "npm-check": "5.4.4",
+    "npm-check-updates": "2.11.3",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^12.0.2",
+    "sinon": "1.17.7",
+    "stubby": "^4.0.0",
+    "yargs": "^12.0.1"
+  }
+}
