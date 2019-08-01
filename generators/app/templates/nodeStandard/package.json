@@ -33,19 +33,6 @@
   },
   "author": "Andres Kaiser",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "compression": "^1.7.2",
-    "cors": "^2.8.4",
-    "debug": "^3.1.0",
-    "express": "^4.16.3",
-    "express-routemap": "^1.1.0",
-    "ioredis": "^4.10.0",
-    "joi": "^14.3.1",
-    "lodash": "^4.17.11",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4"
-  },
   "devDependencies": {
     "artillery": "^1.6.0-13",
     "chai": "^4.1.2",
